@@ -1,53 +1,77 @@
 import fakeFetchApi from "./utils/fakeFetchApi.js"
 
-var loginButton = document.getElementById("login")
+var email
+var password
+var loginButton = document.getElementById("login");
 
 function handleChange() {
-    var email = document.getElementById("email").value
-    var password = document.getElementById("password").value
+    email = document.getElementById("email").value;
+    password = document.getElementById("password").value;
 
-    const user = {
-        email, 
-        password
+    if(email){
+        if(!validateEmail()){
+            generateNotification("Formato de email inválido", "notification-invalid-email", false)
+        }else{
+            clearNotification("notification-invalid-email")
+        }
     }
 
-    const responseFakeApi = fakeFetchApi(user)
+    if(password){
+        if(!validatePassword()){
+            generateNotification("Formato de senha inválido", "notification-invalid-password", false)
+        }else{
+            clearNotification("notification-invalid-password")
+        }
+    }
+    console.log(email, password)
+}
 
-    //if(!validateEmailAndPassword(user.email, user.password)){
-    //   generateNotification("e-mail e senha em formatos inválidos")
-    //}
-
+function handleLogin() {
+    const responseFakeApi = fakeFetchApi({
+        "email": email,
+        "password": password
+    })
     if(responseFakeApi.status === 200){
         window.location.href = "/app"
     }else{
-        generateNotification(responseFakeApi.message)
+        generateNotification(responseFakeApi.message, "notification-error", true)
     }
 }
 
-
-function handleLogin() {
-    //loginButton.addEventListener("click", handleChange)
-    handleChange()
+function generateNotification(message, nameElement, delay=true) {
+    document.getElementById(nameElement).innerText = message
+    if(delay){
+        setTimeout(clearNotification, 2 * 1000, nameElement)
+    }
 }
 
-function generateNotification(message) {
-    document.getElementById("notification-error").innerText = message
-    setTimeout(clearNotification, 2 * 1000)
+function clearNotification(nameElement) {
+    document.getElementById(nameElement).innerHTML = null
 }
 
-function clearNotification() {
-    document.getElementById("notification-error").innerHTML = null
-}
+function validatePassword(){
 
-function validateEmailAndPassword(email, password){
+    var regexPassword = /(?=.[a-z])(?=.[A-Z])(?=.*\W)`{8,}/
 
-    var regexPassword = /(?=.[a-z])(?=.[A-Z])(?=.*\W)/
-    var regerxEmail =  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-    if (password.length >= 8 && regexPassword.test(password) && regerxEmail.test(email)) {
+    if (regexPassword.test(password)) {
+        console.log(password.length >= 8 && regexPassword.test(password))
         return true
+    }else{
+        console.log(password.length >= 8 && regexPassword.test(password))
+        return false
     }
-    return false
 }
 
-handleLogin()
+function validateEmail(){
+
+    var regerxEmail =  /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+
+    if (regerxEmail.test(email)) {
+        return true
+    }else{
+        return false
+    }
+}
+
+window.addEventListener('keyup', handleChange)
+loginButton.addEventListener('click', handleLogin)
