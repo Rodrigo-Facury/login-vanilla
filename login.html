@@ -5,21 +5,19 @@
         <link rel="stylesheet" href="login.css">
     </head>
     <body>
-        <div class="background">
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
         <form>
             <h3>Login</h3>
 
-            <label for="username">Username</label>
-            <input id="username" type="text" placeholder="Username" id="username">
+            <div id="notification-error" class="notification-error"></div>
+
+            <label for="username">Email</label>
+            <input type="email" placeholder="Email" id="email">
 
             <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Password" id="password">
 
             <button id="login">Login</button>
         </form>
+        <script type="module" src="login.js"></script>
     </body>
-    <script src="login.js"></script>
 </html>
