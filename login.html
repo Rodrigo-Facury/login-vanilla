@@ -14,16 +14,18 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form name="login" onsubmit="handleChange()">
+    <form name="login" >
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
         <input name="email" type="text" placeholder="Email" id="email">
+        <p class="error" id="errorEmail">Email incoreto</p>
 
         <label for="password">Password</label>
         <input name="password" type="password" placeholder="Password" id="password">
+        <p class="error" id="errorPassword">Senha fraca</p>
 
-        <button type="submit">Log In</button>
+        <button type="button" onclick="handleChange()">Log In</button>
     </form>
 </body>
 </html>
