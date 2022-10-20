@@ -18,7 +18,7 @@ function handleChange() {
 
     if(password){
         if(!validatePassword()){
-            generateNotification("Formato de senha inválido", "notification-invalid-password", false)
+            generateNotification("A senha deve conter no mínimo 8 caracteres letras maiúsculas, minúsculas e pelo menos 1 caracter especial", "notification-invalid-password", false)
         }else{
             clearNotification("notification-invalid-password")
         }

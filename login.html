@@ -15,7 +15,7 @@
             <div class="notification-invalid" id="notification-invalid-email"></div>
 
             <label for="password">Password</label>
-            <input type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
             <div class="notification-invalid" id="notification-invalid-password"></div>
             <button class="btn-login" type="button" id="login">Login</button>
         </form>
