@@ -2,6 +2,7 @@ import fakeFetchApi from "./utils/fakeFetchApi.js";
 
 var email;
 var password;
+var loginButton = document.getElementById("loginButton")
 
 
 function handleChange() {
@@ -10,7 +11,7 @@ function handleChange() {
 
     if (email) {
         if (!isValidEmail()) {
-            addErrorMsg("Email invalido", "emailError", false)
+            addErrorMsg("Formato de email invalido", "emailError", false)
         }
         else{
             cleanErrorMsg("emailError")
@@ -19,27 +20,28 @@ function handleChange() {
 
     if (password) {
         if (!isValidPassword()) {
-            addErrorMsg("Senha invalida", "passwordError", false)
+            addErrorMsg("Senha invalida (deve conter letras maisuculas, minusculas e pelo menos um character especial)", "passwordError", false)
         }
         else {
             cleanErrorMsg("passwordError")
-            handleLogin() 
         }
     }
 
 }
 
 function handleLogin() {
-    var result = fakeFetchApi({
-        "email": email,
-        "password": password
-    })
-
-    if (result.status == 200) {
-        window.location.href = "/app"
-    }
-    else {
-        addErrorMsg(result.message, "mainLoginError")
+    if (isValidEmail() && isValidPassword()) { 
+        var result = fakeFetchApi({
+            "email": email,
+            "password": password
+        })
+    
+        if (result.status == 200) {
+            window.location.href = "/app"
+        }
+        else {
+            addErrorMsg(result.message, "mainLoginError")
+        }
     }
 }
 
@@ -55,8 +57,8 @@ function cleanErrorMsg(tagId) {
 }
 
 function isValidPassword() {
-    var regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/
-    if (password.length >= 8 && regex.test(password)) {
+    var regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\W){8,}/
+    if (regex.test(password)) {
         return true
     }
     return false
@@ -71,4 +73,6 @@ function isValidEmail() {
 }
 
 
+
 window.addEventListener('keyup', handleChange)
+loginButton.addEventListener('click', handleLogin)

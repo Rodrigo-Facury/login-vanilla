@@ -11,7 +11,7 @@
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <span id="mainLoginError" class="errors"></span>
+                <span id="mainLoginError" class="mainLoginError errors"></span>
                 <form class="login">
                     <div class="login__field">
                         <input type="email" id="email" class="login__input" placeholder="Email"> 
@@ -21,9 +21,7 @@
                         <input type="password" id="password" class="login__input" placeholder="Password">
                         <span id="passwordError" class="errors"></span>
                     </div>
-                    <button class="button login__submit">
-                        <span class="button__text">Entrar</span>
-                    </button>				
+                    <input type="button" class="button login__submit" id="loginButton" value="Entrar">
                 </form>
             </div>
             <div class="screen__background">
