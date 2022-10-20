@@ -2,11 +2,11 @@ import fakeFetchApi from "./utils/fakeFetchApi.js"
 
 var email
 var password
-var loginButton = document.getElementById("login");
+var loginButton = document.getElementById("login")
 
 function handleChange() {
-    email = document.getElementById("email").value;
-    password = document.getElementById("password").value;
+    email = document.getElementById("email").value
+    password = document.getElementById("password").value
 
     if(email){
         if(!validateEmail()){
@@ -51,7 +51,7 @@ function clearNotification(nameElement) {
 
 function validatePassword(){
 
-    var regexPassword = /(?=.[a-z])(?=.[A-Z])(?=.*\W)`{8,}/
+    var regexPassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*\W){8,}/
 
     if (regexPassword.test(password)) {
         console.log(password.length >= 8 && regexPassword.test(password))
