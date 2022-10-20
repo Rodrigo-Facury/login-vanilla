@@ -8,12 +8,22 @@ function handleChange() {
     email = document.getElementById("email").value;
     password = document.getElementById("password").value;
 
+    if (email) {
+        if (!isValidEmail()) {
+            addErrorMsg("Email invalido", "emailError", false)
+        }
+        else{
+            cleanErrorMsg("emailError")
+        }
+    }
+
     if (password) {
-        if (isValidPassword()) {
-            handleLogin()
+        if (!isValidPassword()) {
+            addErrorMsg("Senha invalida", "passwordError", false)
         }
         else {
-            addErrorMsg("Senha invalida", "passwordError", false)
+            cleanErrorMsg("passwordError")
+            handleLogin() 
         }
     }
 
@@ -29,7 +39,7 @@ function handleLogin() {
         window.location.href = "/app"
     }
     else {
-        addErrorMsg(result.message, "errorMsg")
+        addErrorMsg(result.message, "mainLoginError")
     }
 }
 
@@ -49,7 +59,14 @@ function isValidPassword() {
     if (password.length >= 8 && regex.test(password)) {
         return true
     }
+    return false
+}
 
+function isValidEmail() {
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (regex.test(email)) {
+        return true
+    }
     return false
 }
 

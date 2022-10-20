@@ -93,11 +93,11 @@ body {
 	position: relative;	
 }
 
-.login__field .password {
+/* .login__field .password {
 	display: flex;
 	align-items: flex-start;
 	flex-direction: row;
-}
+} */
 
 .errors {
 	display: flex;
