@@ -73,6 +73,5 @@ function isValidEmail() {
 }
 
 
-
 window.addEventListener('keyup', handleChange)
 loginButton.addEventListener('click', handleLogin)

@@ -17,7 +17,7 @@
                 <input type="email" id="email" class="login__input" placeholder="Email"> 
                 <span id="emailError" class="errors"></span>
                 
-                <input type="password" id="password" class="login__input" placeholder="Senha">
+                <input type="password" id="password" class="login__input" placeholder="Senha" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
                 <span id="passwordError" class="errors"></span>
                 
                 <input type="button" class="button login__submit" id="loginButton" value="Entrar">
