@@ -13,9 +13,9 @@ function handleChange() {
 
     const responseFakeApi = fakeFetchApi(user)
 
-    if(!validateEmailAndPassword(user.email, user.password)){
-       generateNotification("e-mail e senha em formatos inválidos")
-    }
+    //if(!validateEmailAndPassword(user.email, user.password)){
+    //   generateNotification("e-mail e senha em formatos inválidos")
+    //}
 
     if(responseFakeApi.status === 200){
         window.location.href = "/app"
@@ -43,7 +43,7 @@ function validateEmailAndPassword(email, password){
 
     var regexPassword = /(?=.[a-z])(?=.[A-Z])(?=.*\W)/
     var regerxEmail =  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    
+
     if (password.length >= 8 && regexPassword.test(password) && regerxEmail.test(email)) {
         return true
     }

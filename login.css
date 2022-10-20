@@ -53,6 +53,23 @@ input{
     font-size: 14px;
     font-weight: 300;
 }
+input:invalid {
+    background-color: red;
+  }
+  form:invalid {
+    border: 5px solid red;
+  }
+  input:valid {
+    background-color: green;
+  }
+  form:valid {
+    border: 5px solid green;
+  }
+  input:required {
+    border-color: #800000;
+    border-width: 3px;
+  }
+
 ::placeholder{
     color: #e5e5e5;
 }
