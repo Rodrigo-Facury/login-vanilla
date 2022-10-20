@@ -93,6 +93,18 @@ body {
 	position: relative;	
 }
 
+.login__field .password {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: row;
+}
+
+.errors {
+	display: flex;
+	margin-top: 10px;
+	color: red;
+}
+
 .login__input {
 	border: none;
 	border-bottom: 2px solid #D1D1D4;
@@ -134,18 +146,4 @@ body {
 .login__submit:hover {
 	border-color: #6A679E;
 	outline: none;
-}
-
-.errorMsg {
-	background-color: red;
-	margin: 10px 0px;
-	padding: 15px 10px 15px 50px;
-	max-width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.error {
-	color: red;
 }

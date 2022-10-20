@@ -8,11 +8,13 @@ function handleChange() {
     email = document.getElementById("email").value;
     password = document.getElementById("password").value;
 
-    if (isValidPassword()) {
-        handleLogin()
-    }
-    else {
-        addErrorMsg("Senha invalida", "passwordError", false)
+    if (password) {
+        if (isValidPassword()) {
+            handleLogin()
+        }
+        else {
+            addErrorMsg("Senha invalida", "passwordError", false)
+        }
     }
 
 }

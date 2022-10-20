@@ -8,19 +8,17 @@
     <title>Login</title>
 </head>
 <body>
-    <span id="errorMsg" class="errorMsg" hidden></span>
-
     <div class="container">
         <div class="screen">
             <div class="screen__content">
                 <form class="login">
                     <div class="login__field">
-                        <input type="email" id="email" class="login__input" placeholder="Email">
-                        <span class="error" id="emailError"></span>
+                        <input type="email" id="email" class="login__input" placeholder="Email"> 
+                        <span id="emailError" class="errors"></span>
                     </div>
-                    <div class="login__field">
-                        <input type="password" id="password" class="login__input" placeholder="Senha">
-                        <span class="error" id="passwordError"></span>
+                    <div class="login__field password">
+                        <input type="password" id="password" class="login__input" placeholder="Password">
+                        <span id="passwordError" class="errors"></span>
                     </div>
                     <button class="button login__submit">
                         <span class="button__text">Entrar</span>
