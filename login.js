@@ -39,8 +39,6 @@ function validacaoInputs(email, password) {
     } else {
         alert('email no formato incorreto')
         email.style.cssText = 'background-color: #ff8b9276;'
-        email.value = ''
-        password.value = ''
         mudaCorInputTemporariamente(email)
         invalido = true
     }
@@ -50,13 +48,14 @@ function validacaoInputs(email, password) {
     } else {
         alert('senha no formado incorreto')
         password.style.cssText = 'background-color: #ff8b9276;'
-        email.value = ''
-        password.value = ''
         mudaCorInputTemporariamente(password)
         invalido = true
     }
 
-    
+    if (invalido) {
+        email.value = ''
+        password.value = ''
+    }
     return invalido
 }
 
@@ -73,6 +72,7 @@ function validacaoEmail(field) {
     (usuario.search(" ")==-1) && (dominio.search(" ")==-1) && (dominio.search(".")!=-1) && (dominio.indexOf(".") >=1)&&
     (dominio.lastIndexOf(".") < dominio.length - 1)
 }
+
 function validacaoPassword(password) {
     /*
         -maior ou igual a oito caracteres
