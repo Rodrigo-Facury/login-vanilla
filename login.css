@@ -1,0 +1,103 @@
+html {
+    height: 100%;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background: blueviolet;
+    background: linear-gradient(to top, violet, blueviolet);
+    font-family: "Audiowide", sans-serif;
+}
+
+.container {
+    background: mediumvioletred;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,0.2);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    padding: 30px 20px 0;
+    margin: 0;
+}
+
+
+input {
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    transition: background-color .3s;
+}
+
+.login-item{
+    padding: 1rem;
+}
+.form input{
+    margin:0;
+    padding: 0;
+    outline: 0;
+    width:100%;
+    border: 0;
+    border-radius: 0.2rem;
+    margin-top:15px;
+}
+.form input[type="button"]{
+    text-transform: uppercase;
+    background-color: palevioletred;
+    color:white;
+}
+.form input[type="button"]:hover,
+.form input[type="button"]:focus  {
+    background: violet;
+    color: white;
+}
+
+.form input[type="text"], input[type="password"], input[type=button]{
+    padding: 10px 0px 10px 10px;
+}
+
+::placeholder {
+    color: lightpink;
+    padding-left:0px;
+}
+
+.form-field {
+    display:flex;
+}
+
+.logged {
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    padding: 30px 20px 0;
+    margin: 0;
+}
+
+
+.permitido{
+    display: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+.negado {
+    display: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}

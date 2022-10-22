@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Login 1.0</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+<body>
+
+<div class="container">
+    <div class="form">
+
+        <form class="form form-login">
+            <div class="logo">Login Page 0.1</div>
+            <div class="login-item">
+                <div class="form-field"><input type="text" id="email" name="email" placeholder="email" required ></div>
+
+                <div class="form-field"><input type="password" id="password" name="password" placeholder="password" required></div>
+
+                <div class="form-field"><input type="button" id="submit" name="submit" value="Submit" onclick="submited"></div>
+            </div>
+            </form>
+    </div>
+
+    <div id="modal"  class="modal">
+        <div id="permitido" class="permitido">Acesso Permitido!</div>
+        <div id="negado" class="negado">Acesso Negado! <br>
+            <h4>Email ou Senha Incorreto!</h4></div>
+    </div>
+</div>
+
+<script src="login.js" type="module"></script>
+
+</body>
+
+
+</html>
