@@ -43,9 +43,8 @@ function checkEmail() {
         email.focus();
         email.style.color = "red";
 
-        clear();
-
         alert("email invalido");
+        clear();
     return false;
 }
 
@@ -62,10 +61,8 @@ function checkPass() {
         password.focus();
         password.style.color = "red";
 
-    clear();
-
-
     alert("formato de senha invalido, a-z, A-Z, 0-9, !@#$*, +8char");
+    clear();
     return false;
 }
 
