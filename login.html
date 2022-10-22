@@ -1,67 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="login.css" media="screen" />
+<link rel="icon" type="image/x-icon" href="./img/Cogumelo.png">
+<script type="text/javascript" src="login.js"></script>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./login.css" />
-  <link rel="icon" type="image/x-icon" href="./img/Cogumelo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
-    rel="stylesheet" />
   <title>Save Peach</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>🍄 Cadastrar 🍄</h1>
-    </div>
-
-    <form id="form" class="form" onsubmit="toggleButton()">
-      <div class="form-control">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Digite seu Nome...">
-        <i class="fas fa-exclamation-circle"></i>
-        <i class="fas fa-check-circle"></i>
-        <small>Mensagem de erro</small>
-      </div>
-
-      <div class="form-control">
-        <label for="email">Emails</label>
-        <input type="email" id="email" placeholder="Digite seu Email..">
-        <i class="fas fa-exclamation-circle"></i>
-        <i class="fas fa-check-circle"></i>
-        <small>Mensagem de erro</small>
-      </div>
-
-      <div class="form-control">
-        <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="Digite sua Senha...">
-        <i class="fas fa-exclamation-circle"></i>
-        <i class="fas fa-check-circle"></i>
-        <small>Mensagem de erro</small>
-      </div>
-
-      <div class="form-control">
-        <label for="password-confirmation">Confirmacao de Senha</label>
-        <input type="password" id="password-confirmation" placeholder="Confirme sua Senha...">
-        <i class="fas fa-exclamation-circle"></i>
-        <i class="fas fa-check-circle"></i>
-        <small>Mensagem de erro</small>
-      </div>
-
-      <button type="submit" id="login">
-        Cadastrar
-      </button>
-    </form>
+  <div class="background">
   </div>
+  <form name="login">
+    <h1>🍄 Cadastrar 🍄</h1>
 
-  <script src="./login.js"></script>
-  <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+    <label for="username">Username</label>
+    <input name="email" type="text" placeholder="Email" id="email">
+    <p class="error" id="errorEmail">Email incoreto</p>
 
+    <label for="password">Password</label>
+    <input name="password" type="password" placeholder="Password" id="password">
+    <p class="error" id="errorPassword">Senha fraca</p>
+
+    <button type="button" onclick="handleChange()">Log In</button>
+  </form>
 </body>
 
 </html>
