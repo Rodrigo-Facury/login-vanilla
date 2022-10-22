@@ -1,47 +1,83 @@
-// import fakeFetchApi from "./utils/fakeFetchApi";
+import fakeFetchApi from "./utils/fakeFetchApi.js";
 
-// async function handleLogin(){
-//   try{
-//   fakeFetchApi(document.forms[0].email.value,  document.forms[0].password.value)
-// }catch(error){
-//   console.log('Fudeu')
-// }}
+var email;
+var password;
+var loginButton = document.getElementById("login");
 
 function handleChange() {
-  if (checarEmail() && checarSenha()) {
-    console.log("Logando");
-    handleLogin();
+  email = document.getElementById("email").value;
+  password = document.getElementById("password").value;
+
+  if (email) {
+    if (!validateEmail()) {
+      generateNotification(
+        "Formato de email inválido",
+        "notification-invalid-email",
+        false,
+      );
+    } else {
+      clearNotification("notification-invalid-email");
+    }
   }
+
+  if (password) {
+    if (!validatePassword()) {
+      generateNotification(
+        "A senha deve conter no mínimo 8 caracteres letras maiúsculas, minúsculas e pelo menos 1 caracter especial",
+        "notification-invalid-password",
+        false,
+      );
+    } else {
+      clearNotification("notification-invalid-password");
+    }
+  }
+  console.log(email, password);
 }
 
-function checarEmail() {
-  if (
-    document.forms[0].email.value == "" ||
-    document.forms[0].email.value.indexOf("@") == -1 ||
-    document.forms[0].email.value.indexOf(".") == -1
-  ) {
-    var input = document.getElementById("email");
-    input.style.cssText = "border: 1px solid red";
-
-    var error = document.getElementById("errorEmail");
-    error.style.cssText = "display: block";
-
-    return false;
+function handleLogin() {
+  const responseFakeApi = fakeFetchApi({
+    email: email,
+    password: password,
+  });
+  if (responseFakeApi.status === 200) {
+    window.location.href = "/app";
   } else {
-    return true;
+    generateNotification(responseFakeApi.message, "notification-error", true);
   }
 }
-function checarSenha() {
-  var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-  if (document.forms[0].password.value.match(passw)) {
+
+function generateNotification(message, nameElement, delay = true) {
+  document.getElementById(nameElement).innerText = message;
+  if (delay) {
+    setTimeout(clearNotification, 2 * 1000, nameElement);
+  }
+}
+
+function clearNotification(nameElement) {
+  document.getElementById(nameElement).innerHTML = null;
+}
+
+function validatePassword() {
+  var regexPassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*\W){8,}/;
+
+  if (regexPassword.test(password)) {
+    console.log(password.length >= 8 && regexPassword.test(password));
     return true;
   } else {
-    var input = document.getElementById("password");
-    input.style.cssText = "border: 1px solid red";
-
-    var error = document.getElementById("errorPassword");
-    error.style.cssText = "display: block";
-
+    console.log(password.length >= 8 && regexPassword.test(password));
     return false;
   }
 }
+
+function validateEmail() {
+  var regerxEmail = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+
+  if (regerxEmail.test(email)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+window.addEventListener("keyup", handleChange);
+loginButton.addEventListener("click", handleLogin);
