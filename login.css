@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: white;
+  transition: 300ms ease-in-out;
+}
+
+input {
+  height: 30px;
+  border-radius: 5px;
+  border-style: solid;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  outline: none;
+  transition: 300ms ease-in-out;
+}
+
+input:hover {
+  border: 2px solid #7400b8;
+  border-style: solid;
+}
+
+input:focus {
+  border: 2px solid #3a005c;
+  border-style: solid;
+}
+
+label {
+  font-weight: bold;
+  font-family: "Mochiy Pop One", sans-serif;
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.show-off {
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  width: 70vw;
+  background: #7400b8;
+  border-radius: 0px 80px 0px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  width: 30vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  width: 25vw;
+}
+
+.input-div {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.show-password-button {
+  margin-left: -36px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.button-submit {
+  transition: 300ms ease-in-out;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background: #7400b8;
+  font-weight: 600;
+  height: 30px;
+  width: 178px;
+}
+
+.button-submit:hover {
+  background: #b22dff;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  height: 20px;
+  background: white; /* Black background color */
+  color: #7400b8; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 5px; /* Rounded borders */
+  border-left: 5px solid #7400b8;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  right: 10px; /* Center the snackbar */
+  top: 10px; /* 30px from the bottom */
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.show-password-div {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  font-weight: bold;
+}
