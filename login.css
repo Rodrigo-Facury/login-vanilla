@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgb(202, 10, 202), rgb(54, 54, 199));
+    background-size: cover;
+    height: 100vh;
+}
+
+form {
+    border-radius: 20px;
+    background: white;
+    border: none;
+    width: 30em;
+    padding: 2rem 0; 
+}
+
+.login-container {
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+}
+ 
+#email {
+    display: block;
+    border: none;
+    border: 1px solid rgb(202, 10, 202);
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+#email:hover {
+    background-color: rgb(235, 209, 227);
+}
+
+#password{
+    display: block;
+    border: none;
+    border: 1px solid rgb(202, 10, 202);
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+#password:hover {
+    background-color: rgb(235, 209, 227);
+}
+
+
+.btn-login {
+    display: block;
+    color: black;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(54, 54, 199);
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.btn-login:hover {
+    opacity: .7;
+}
+
+.notification-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .notification-invalid{
+    color: red;
+  }
