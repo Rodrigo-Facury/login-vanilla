@@ -59,7 +59,7 @@ window.onload = () => {
 
     const validLogin = (message) => {
         if (message.status === 200) {
-            window.location.href = "/app";
+            window.location.href = "/app/app.html";
         } else if (message.status === 401) {
             spanMessage.innerHTML = message.message;
             setErrorForm(inputEmail, "");
