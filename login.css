@@ -1,0 +1,29 @@
+body{
+    background-image: url(./img/Background.png);
+    background-size: 100%;
+}
+
+
+.login-back{
+    text-align: center;
+    margin: 100px 400px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.btn{
+    margin-top: 40px;
+    width: 325px;
+}
+
+.errorMessage{
+    color: rgb(233, 0, 0);
+    font-size: 12px;
+}
+
+.errorLogin{
+    color: rgb(233, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+}

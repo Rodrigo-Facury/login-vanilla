@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <section class="login-back">
+      <h1>Login</h1>
+      <span id="incorrectLogin" class="errorLogin mt-3"></span>
+      <div class="input-group flex-nowrap mt-5">
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Email"
+          aria-label="Email"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+      <span id="emailIncorrect" class="errorMessage"></span>
+      <div class="input-group flex-nowrap mt-4">
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Password"
+          aria-label="Password"
+          aria-describedby="addon-wrapping"
+          pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        />
+      </div>
+      <span id="passwordIncorrect" class="errorMessage"></span>
+
+      <input class="btn btn-primary" type="submit" id="login" value="Entrar" />
+    </section>
+
+    <script type="module" src="./login.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

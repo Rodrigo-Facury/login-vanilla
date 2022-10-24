@@ -2,15 +2,15 @@ export default function fakeFetchApi(user) {
   const users = [
     {
       email: 'billgates@gmail.com',
-      password: 'sou-rico'
+      password: 'Sou-rico'
     },
     {
       email: 'adalovelace@gmail.com',
-      password: 'digdim-digdim'
+      password: 'Digdim-digdim'
     },
     {
       email: 'markzuckerberg@gmail.com',
-      password: 'vou-te-hackeei'
+      password: 'Vou-te-hackeei'
     }
   ];
 
@@ -27,9 +27,9 @@ export default function fakeFetchApi(user) {
   }
 
   if (correctUser) {
-    return { message: 'login feito com sucesso!', status: 200 };
+    return { message: 'LOGIN EFETUADO COM SUCESSO!', status: 200 };
   }
 
-  return { message: 'usuário e/ou senha incorretos.', status: 401 };
+  return { message: 'USUÁRIO E/OU SENHA INCORRETOS!', status: 401 }; 
 
 }
