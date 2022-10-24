@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="login.css">
+  <title>Login</title>
+</head>
+<body>
+  <section class="area-login">
+    <div class="login">
+      <form>
+        <input type="text" name="name" placeholder="Email" autofocus>
+        <input type="text" name="password" placeholder="Senha" autofocus id="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <div class="notification-invalid" id="notification-invalid-password"></div>
+        <input type="submit" value="Login">
+      </form>
+      <script type="module" src="login.js"></script>
+    </div>
+  </section>
+</body>
+</html>
