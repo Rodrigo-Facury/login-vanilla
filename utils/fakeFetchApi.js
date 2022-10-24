@@ -6,7 +6,7 @@ export default function fakeFetchApi(user) {
     },
     {
       email: 'adalovelace@gmail.com',
-      password: 'digdim-digdim'
+      password: 'Aigdim-digdim01'
     },
     {
       email: 'markzuckerberg@gmail.com',
