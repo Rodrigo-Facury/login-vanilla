@@ -20,7 +20,7 @@ function handleChange() {
 
     if (password) {
         if (!isValidPassword()) {
-            addErrorMsg("Senha invalida (deve conter letras maisuculas, minusculas e pelo menos um character especial)", "passwordError", false)
+            addErrorMsg("Senha invalida (deve conter letras maiusculas, minusculas e pelo menos um caracter especial)", "passwordError", false)
         }
         else {
             cleanErrorMsg("passwordError")
