@@ -27,6 +27,39 @@ input:focus {
   border-style: solid;
 }
 
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  margin-right: 20px;
+  display: grid;
+  place-content: center;
+  color: #7400b8;
+  background-color: #fff;
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  transition: 300ms ease-in-out;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="checkbox"]:checked {
+  color: #7400b8;
+  background-color: #7400b8;
+}
+
 label {
   font-weight: bold;
   font-family: "Mochiy Pop One", sans-serif;
@@ -69,9 +102,24 @@ label {
 .input-div {
   display: flex;
   width: 200px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+#error-password {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  height: 15px;
+  color: #7400b8;
+}
+
+#error-password.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
+  animation: fadein 0.5s, fadeout 0.5s 2s;
 }
 
 .show-password-button {
@@ -116,8 +164,8 @@ label {
 
 #snackbar.show {
   visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
+  animation: fadein 0.5s, fadeout 0.5s 2s;
 }
 
 @-webkit-keyframes fadein {
@@ -167,8 +215,9 @@ label {
 .show-password-div {
   display: flex;
   width: 180px;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
+  height: 50px;
+  justify-content: center;
+  align-items: baseline;
+  align-content: baseline;
   font-weight: bold;
 }

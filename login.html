@@ -21,7 +21,7 @@
   <body>
     <div class="show-off"></div>
     <div class="form-div">
-      <!-- <form id="form-card"> -->
+      <form id="form-card" onsubmit="Login(event)">
       <div class="card">
         <label>ジョジョ </label>
         <input id="email-input" placeholder="email" type="email" required />
@@ -31,16 +31,18 @@
             placeholder="senha"
             type="password"
             required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           />
+          <p id="error-password">Senha requerido</label>
         </div>
         <div class="show-password-div">
           <input type="checkbox" onclick="ShowPassword()" />
           <p id="checkbox-label">mostrar senha</p>
         </div>
 
-        <button class="button-submit" onclick="Login()">Entrar</button>
+        <button class="button-submit" type="submit">Entrar</button>
       </div>
-      <!-- </form> -->
+      </form>
     </div>
     <div id="snackbar"></div>
   </body>

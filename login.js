@@ -1,16 +1,10 @@
 function showSnackbar(message) {
-  // Get the snackbar DIV
   var x = document.getElementById("snackbar");
-
-  // Add the "show" class to DIV
   x.className = "show";
-
   x.innerHTML = message;
-
-  // After 3 seconds, remove the show class from DIV
   setTimeout(function () {
     x.className = x.className.replace("show", "");
-  }, 3000);
+  }, 2000);
 }
 
 function ShowPassword() {
@@ -65,7 +59,8 @@ function fakeFetchApi(user) {
   }
 }
 
-function Login() {
+function Login(ev) {
+  ev.preventDefault();
   try {
     var email = document.getElementById("email-input").value;
     var password = document.getElementById("password-input").value;
@@ -78,6 +73,15 @@ function Login() {
       showSnackbar("Email requerido");
     } else if (!String(email).includes("@")) {
       showSnackbar("Email inserido incorretamente");
+      var passwordErrorLabel = (document.getElementById(
+        "error-password"
+      ).display = "flex");
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
+      }, 2000);
+      passwordErrorLabel;
+    } else if (!password || String(password) === "") {
+      showSnackbar("Senha requerido");
     } else if (!password || String(password) === "") {
       showSnackbar("Senha requerido");
     } else {
@@ -86,6 +90,9 @@ function Login() {
         showSnackbar("Email e/ou senha incorretos !!!");
       } else {
         showSnackbar("Login feito com sucesso !");
+        setTimeout(function () {
+          window.location.href = "/";
+        }, 2000);
       }
     }
   } catch (err) {
