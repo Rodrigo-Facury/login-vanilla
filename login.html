@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <form>
+            <h2>Login</h2>
+            <div id="notification-error" class="notification-error""></div>
+
+            <h3 for="username">{Email}</h3>
+            <input type="email"  id="email">
+            <div class="notificacao-invalida" id="notificacao-invalida-email"></div>
+
+            <h3 for="password">{Senha}</h3>
+            <input type="password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <div class="notificacao-invalida" id="notificacao-invalida-password"></div>
+            
+            <button class="btn-login" type="button" id="login">Login</button>
+        </form>
+        <script type="module" src="login.js"></script>
+    </body>
+</html>
