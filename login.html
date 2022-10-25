@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="screen">
+            <h1 class="loginTitle">Login</h1>
+            <span id="mainLoginError" class="mainLoginError errors"></span>
+            <form class="login">
+                <input type="email" id="email" class="login__input" placeholder="Email"> 
+                <span id="emailError" class="errors"></span>
+                
+                <input type="password" id="password" class="login__input" placeholder="Senha" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <span id="passwordError" class="errors"></span>
+                
+                <input type="button" class="button login__submit" id="loginButton" value="Entrar">
+            </form>
+        </div>
+    </div>
+    <script type='module' src='./login.js'></script>
+</body>
+</html>

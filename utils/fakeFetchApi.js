@@ -2,7 +2,7 @@ export default function fakeFetchApi(user) {
   const users = [
     {
       email: 'billgates@gmail.com',
-      password: 'sou-rico'
+      password: 'Sou-rico'
     },
     {
       email: 'adalovelace@gmail.com',
