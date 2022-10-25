@@ -21,7 +21,7 @@ export default function fakeFetchApi(user) {
   for (let i = 0; i < users.length; i += 1) {
     if (users[i].email === email && users[i].password === password) {
       correctUser = true;
-      
+
       break;
     }
   }
