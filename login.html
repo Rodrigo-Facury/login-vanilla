@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário</title>
+
+        <link rel="stylesheet" href="login.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <form id="form">
+                <h1>Login</h1>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input placeholder="Digite o seu email..." type="email" id="email">
+                    <p class="error">Esse email é inválido.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input placeholder="Digite a sua senha..." type="password" id="senha">
+                    <p class="error">A senha precisa possuir ao menos 8 caracteres, incluindo ao menos uma letra maiúscula, uma letra minúscula e um caracter especial.</p>
+                </div>
+
+                <button type="submit">Entrar</button>
+                <p class="form-response error"></p>
+            </form>
+        </div>
+
+
+        <script type="module" src="./login.js"></script>
+    </body>
+
+</html>
