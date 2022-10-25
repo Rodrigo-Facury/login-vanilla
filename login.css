@@ -1,0 +1,80 @@
+body
+{
+    background: cadetblue !important;
+}
+
+.card
+{
+    width: 400px;
+    height: auto;
+    background: #377a7c;
+    margin: auto;
+    margin-top: 6%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px;
+    
+}
+
+.titulo{
+    margin: auto;
+    font-family: 'Brush Script MT', cursive;
+    margin-left: 42%;
+    margin-top: 20px;
+    font-size: 50px;
+    color: #ae5e00;
+}
+
+h3{
+    text-align: center;
+    font-style: italic;
+    padding-top:40;
+}
+
+.form{
+    /* margin-top: 50px; */
+    padding: 50;
+}
+
+.btn{
+    margin-left: 16%;
+    margin-top: 40px;
+    width: 200px;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.form-group i {
+    position: absolute;
+    margin-top: -27;
+    margin-left: 270;
+    visibility: hidden;
+}
+
+.form-group small{
+    visibility: hidden;
+}
+
+.form-group.success input {
+    border: 1.7px solid #4ECA64;
+    border-radius: 5px;
+}
+
+.form-group.error input {
+    border: 1.7px solid #DB5A5A;
+    border-radius: 5px;
+}
+
+.form-group.error i.img-error {
+    visibility: visible;
+}
+
+.form-group.success i.img-success {
+    visibility: visible;
+}
+
+.form-group.error small{
+    color: #DB5A5A;
+    visibility: visible;
+}

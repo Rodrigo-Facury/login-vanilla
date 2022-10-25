@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Login-Vanila</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 class="titulo">Login-Vanila</h1>
+    <div class="card">
+        <h3>Login</h3>
+        <!-- <div class="form"> -->
+        <form class="form" id="form">
+            <div class="form-group">
+                <label for="usr">Email:</label>
+                <input type="text" class="form-control" placeholder="ex: MariaSouza@Alvez.com" id="email">
+                <i class="img-error"><img src="./images/error-icon.svg"></i>
+                <i class="img-success"><img src="./images/success-icon.svg"></i>
+
+                <small>Error Message</small>
+
+            </div>
+            <div class="form-group">
+                <label for="pwd">Senha:</label>
+                <input type="password" placeholder="digite a sua senha" class="form-control" id="senha">
+                <i class="img-error"><img src="./images/error-icon.svg"></i>
+                <i class="img-success"><img src="./images/success-icon.svg"></i>
+
+                <small>Error Message</small>
+
+            </div>
+            <button class="btn btn-primary" type="submit">Acessar</button>
+        </form>
+        <!-- </div> -->
+    </div>
+
+    <script src="login.js" type="module"></script>
+</body>
+
+</html>
