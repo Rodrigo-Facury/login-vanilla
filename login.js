@@ -1,6 +1,7 @@
 const senha = document.getElementById('senha')
 const email = document.getElementById('email')
 const form = document.getElementById('form')
+let submitButton = document.getElementById("login")
 import fakeFetchApi from "./utils/fakeFetchApi.js"
 
 form.addEventListener('submit', (e) => {
@@ -18,7 +19,7 @@ function checkInputs() {
     const senhaValue = senha.value.trim()
     const emailValue = email.value.trim()
 
-    const regex = /[.*+?^${}()|[\]\\]/g
+    const regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\W){8,}/
     const letrasMaiusculas = /[A-Z]/
     const letrasMinusculas = /[a-z]/
 
@@ -65,6 +66,14 @@ function handleLogin() {
         generateNotification(responseFakeApi.message, "notification-error", true)
     }
 }
+
+function generateNotification(message, nameElement, delay = true) {
+    document.getElementById(nameElement).innerText = message
+    if (delay) {
+        setTimeout(clearNotification, 2 * 1000, nameElement)
+    }
+}
+
 function setErrorFor(input, message) {
     const formGroup = input.parentElement;
     const small = formGroup.querySelector('small')
