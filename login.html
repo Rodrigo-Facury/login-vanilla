@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="login.js"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="show-off"></div>
+    <div class="form-div">
+      <form id="form-card" onsubmit="Login(event)">
+      <div class="card">
+        <label>ジョジョ </label>
+        <input id="email-input" placeholder="email" type="email" required />
+        <div class="input-div">
+          <input
+            id="password-input"
+            placeholder="senha"
+            type="password"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          />
+          <p id="error-password">Senha requerido</label>
+        </div>
+        <div class="show-password-div">
+          <input type="checkbox" onclick="ShowPassword()" />
+          <p id="checkbox-label">mostrar senha</p>
+        </div>
+
+        <button class="button-submit" type="submit">Entrar</button>
+      </div>
+      </form>
+    </div>
+    <div id="snackbar"></div>
+  </body>
+</html>
