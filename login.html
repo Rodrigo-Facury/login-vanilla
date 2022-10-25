@@ -6,17 +6,29 @@
   <link rel="stylesheet" href="login.css">
   <title>Login</title>
 </head>
+
 <body>
   <section class="area-login">
     <div class="login">
       <form>
-        <input type="text" name="name" placeholder="Email" autofocus>
-        <input type="text" name="password" placeholder="Senha" autofocus id="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <h1>Login</h1>
+
+        <div id="notification-error" class="notification-error""></div>
+
+        <input type="email" name="name" placeholder="Email" autofocus>
+        
+        <div class="notification-invalid" id="notification-invalid-email"></div>
+
+        <input type="password" name="password" placeholder="Senha" autofocus id="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        
         <div class="notification-invalid" id="notification-invalid-password"></div>
-        <input type="submit" value="Login">
+
+        <button class="btn-login" type="submit" id="login">Login</button>
+
       </form>
       <script type="module" src="login.js"></script>
     </div>
   </section>
 </body>
+
 </html>
