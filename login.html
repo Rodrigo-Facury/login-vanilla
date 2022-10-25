@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Save Peach</title>
+  <link rel="icon" type="image/x-icon" href="./img/Cogumelo.png">
+  <link rel="stylesheet" type="text/css" href="login.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="form">
+
+      <form class="form form-login">
+        <div class="logo">🍄 Cadastrar 🍄</div>
+        <div class="login-item">
+          <div class="form-field"><input type="text" id="email" name="email" placeholder="Email" required></div>
+
+          <div class="form-field"><input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+
+          <div class="form-field"><input type="button" id="submit" name="submit" value="Submit" onclick="submited">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="modal" class="modal">
+      <div id="permitido" class="permitido">Access Granted!</div>
+      <div id="negado" class="negado">Acess Denied! <br>
+        <h4>Email ou Senha Incorreto!</h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js" type="module"></script>
+
+</body>
+
+
+</html>
