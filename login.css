@@ -4,8 +4,9 @@ header .header{
 }
 header a img{
   width: 134px;
-margin-top: 4px;
+  margin-top: 4px;
 }
+
 .login-page {
   width: 500px;
   padding: 8% 0 0;
@@ -13,7 +14,7 @@ margin-top: 4px;
 }
 .login-page .form .login{
   margin-top: -31px;
-margin-bottom: 26px;
+  margin-bottom: 26px;
 }
 .form {
   position: relative;
@@ -31,7 +32,7 @@ margin-bottom: 26px;
   background: #f2f2f2;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
+  margin: 20px 0 8px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
@@ -39,6 +40,7 @@ margin-bottom: 26px;
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
+  margin-top: 15px;
   outline: 0;
   background-color: #328f8a;
   background-image: linear-gradient(45deg,#328f8a,#08ac4b);
@@ -51,22 +53,6 @@ margin-bottom: 26px;
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
 
 body {
   background-color: #328f8a;
@@ -77,17 +63,118 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nameError {
-  display: none;
-  font-size: 0.8em;
+.alert {
+  position: relative;
+  top: 10;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  line-height: 1.8;
+  border-radius: 5px;
+  cursor: hand;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 400;
 }
 
-#nameError.visible {
+.alertCheckbox {
+  display: none;
+}
+
+:checked + .alert {
+  display: none;
+}
+
+.alertText {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.alertClose {
+  float: right;
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.success {
+  background-color: #EFE;
+  border: 1px solid #DED;
+  color: #9A9;
+}
+
+.error {
+  background-color: #FEE;
+  border: 1px solid #EDD;
+  color: #A66;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
   display: block;
 }
 
-input.invalid {
-  border-color: red;
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-
     

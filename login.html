@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
     <link rel="stylesheet" href="login.css" />
-    <script type="text/javascript" src="login.js"></script>
+    <!-- Validations Fileds -->
+    <script type="text/javascript" src="utils/validations.js"></script>
+    <!-- LIBS EXTERNAS: JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon"/>
+
     <title>Login Form</title>
   </head>
   <body>
     <div class="login-page">
+
+      <label id="alert_geral"></label>
+
       <div class="form">
         <div class="login">
           <div class="login-header">
@@ -18,29 +26,27 @@
           </div>
         </div>
         <form class="login-form" id="form">
-          <input id="email" type="email" placeholder="Your E-mail" />
+          <input id="email" type="email" placeholder="Your E-mail"/>
           <small id="small_email"></small>
-          <input id="password" type="password" placeholder="Your Password" />
+          <input id="password" type="password" placeholder="Your Password"/>
           <small id="small_pass"></small>
           <button id="submit">Logar</button>
-          <div>
-            <input type="checkbox" id="visiblePassword">
-            <label for="visiblePassword">Visualizar Senha</label>
-          </div>
         </form>
-        <span role="alert" id="nameError" aria-hidden="true">
-          Please enter First Name
-        </span>
+        <label class="container">Visualizar Senha
+          <input type="checkbox" id="visiblePassword">
+          <span class="checkmark"></span>
+        </label>
       </div>
     </div>
+
+    <!-- API Fecth -->
+    <script type="module" src="login.js"></script>
 
     <script>
       $('#email').on('input', validateEmailInput);
       $('#password').on('input', validatePasswordInput);
       $('#visiblePassword').on('change', viewPassword);
-      $('#submit').on('click', handleLogin);
-
     </script>
-    
+
   </body>
 </html>
