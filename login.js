@@ -1,13 +1,7 @@
 const senha = document.getElementById('senha')
 const email = document.getElementById('email')
 const form = document.getElementById('form')
-
-//  fetch('./utils/fakeFetchApi.js')
-//     .then(response => response.json)
-//     .then(console.log(response));
-// import fakeFetchApi from './utils/fakeFetchApi';
-
-// console.log(fakeFetchApi);
+import fakeFetchApi from "./utils/fakeFetchApi.js"
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -60,6 +54,17 @@ function checkInputs() {
     }
 }
 
+function handleLogin() {
+    const responseFakeApi = fakeFetchApi({
+        email: email,
+        senha: password,
+    })
+    if (responseFakeApi.status === 200) {
+        window.location.href = "/app"
+    } else {
+        generateNotification(responseFakeApi.message, "notification-error", true)
+    }
+}
 function setErrorFor(input, message) {
     const formGroup = input.parentElement;
     const small = formGroup.querySelector('small')
@@ -79,6 +84,5 @@ function isEmail(email) {
     return /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email)
 }
 
-function redirect() {
-
-}
+window.addEventListener("keyup", checkInputs)
+submitButton.addEventListener("click", handleLogin)
