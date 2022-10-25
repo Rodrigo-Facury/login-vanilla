@@ -1,35 +1,35 @@
 export default function fakeFetchApi(user) {
-  const users = [
-    {
-      email: 'billgates@gmail.com',
-      password: 'sou-rico'
-    },
-    {
-      email: 'adalovelace@gmail.com',
-      password: 'digdim-digdim'
-    },
-    {
-      email: 'markzuckerberg@gmail.com',
-      password: 'vou-te-hackeei'
+    const users = [
+      {
+        email: 'billgates@gmail.com',
+        senha: 'BillGates-2022'
+      },
+      {
+        email: 'adalovelace@gmail.com',
+        senha: 'AdaLoveLace-2022'
+      },
+      {
+        email: 'markzuckerberg@gmail.com',
+        senha: 'MarkZuck-2022'
+      }
+    ];
+  
+    const { email, senha } = user;
+  
+    let correctUser = false;
+  
+    for (let i = 0; i < users.length; i += 1) {
+      if (users[i].email === email && users[i].senha === senha) {
+        correctUser = true;
+        
+        break;
+      }
     }
-  ];
-
-  const { email, password } = user;
-
-  let correctUser = false;
-
-  for (let i = 0; i < users.length; i += 1) {
-    if (users[i].email === email && users[i].password === password) {
-      correctUser = true;
-      
-      break;
+  
+    if (correctUser) {
+      return { message: 'Login realizado com sucesso!', status: 200 };
     }
+  
+    return { message: 'Credenciais incorretas.', status: 401 };
+  
   }
-
-  if (correctUser) {
-    return { message: 'login feito com sucesso!', status: 200 };
-  }
-
-  return { message: 'usuário e/ou senha incorretos.', status: 401 };
-
-}

@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #231b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #352942;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px #130d16;
+    width: 20%;
+    font-weight: bold;
+}
+
+.card > h1 {
+    color: #0db3f0;
+    font-weight: bold;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0px 0px 10px #0b63c1;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.textfield > input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background: #5f4e72;
+    outline: none;
+    margin-bottom: 20px;
+    color: #d1cfcf;
+    box-shadow: 0px 10px 20px #291c30;
+}
+
+.textfield > input::placeholder{
+    color: #382e44;
+}
+
+.textfield > label {
+    color: #d1cfcf;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 5px #797878;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn > button{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #0db3f0;
+    color: #352942;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    box-shadow: 0px 5px 40px 3px #0b63c1;
+}
+
+
