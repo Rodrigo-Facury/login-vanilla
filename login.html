@@ -1,28 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<link rel="icon" type="image/x-icon" href="./img/Cogumelo.png">
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <title>Save Peach</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="icon" type="image/x-icon" href="./img/Cogumelo.png">
+  <link rel="stylesheet" type="text/css" href="login.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 </head>
 
 <body>
-  <form>
-    <h1>🍄 Cadastrar 🍄</h1>
 
-    <div id="notification-error" class="notification-error""></div>
+  <div class="container">
+    <div class="form">
 
-            <label for=" username">Email</label>
-      <input type="email" placeholder="Email" id="email">
-      <div class="notification-invalid" id="notification-invalid-email"></div>
+      <form class="form form-login">
+        <div class="logo">🍄 Cadastrar 🍄</div>
+        <div class="login-item">
+          <div class="form-field"><input type="text" id="email" name="email" placeholder="Email" required></div>
 
-      <label for="password">Password</label>
-      <input type="password" placeholder="Password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}">
-      <div class="notification-invalid" id="notification-invalid-password"></div>
-      <button class="btn-login" type="button" id="login">Login</button>
-  </form>
-  <script type="module" src="login.js"></script>
+          <div class="form-field"><input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+
+          <div class="form-field"><input type="button" id="submit" name="submit" value="Submit" onclick="submited">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="modal" class="modal">
+      <div id="permitido" class="permitido">Access Granted!</div>
+      <div id="negado" class="negado">Acess Denied! <br>
+        <h4>Email ou Senha Incorreto!</h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js" type="module"></script>
+
 </body>
+
 
 </html>

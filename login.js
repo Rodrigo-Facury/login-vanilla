@@ -1,83 +1,66 @@
-import fakeFetchApi from "./utils/fakeFetchApi.js";
+import fakeFetchApi from "/utils/fakeFetchApi.js";
 
-var email;
-var password;
-var loginButton = document.getElementById("login");
+const user = { email: "", password: "" };
 
-function handleChange() {
-  email = document.getElementById("email").value;
-  password = document.getElementById("password").value;
+const email = document.getElementById("email");
+email.addEventListener("keyup", emailKeyUp);
 
-  if (email) {
-    if (!validateEmail()) {
-      generateNotification(
-        "Formato de email inválido",
-        "notification-invalid-email",
-        false,
-      );
-    } else {
-      clearNotification("notification-invalid-email");
-    }
-  }
+const password = document.getElementById("password");
+password.addEventListener("keyup", passwordKeyUp);
 
-  if (password) {
-    if (!validatePassword()) {
-      generateNotification(
-        "A senha deve conter no mínimo 8 caracteres letras maiúsculas, minúsculas e pelo menos 1 caracter especial",
-        "notification-invalid-password",
-        false,
-      );
-    } else {
-      clearNotification("notification-invalid-password");
-    }
-  }
-  console.log(email, password);
+function emailKeyUp(event) {
+  user.email = event.target.value;
 }
 
-function handleLogin() {
-  const responseFakeApi = fakeFetchApi({
-    email: email,
-    password: password,
-  });
-  if (responseFakeApi.status === 200) {
-    window.location.href = "/app";
-  } else {
-    generateNotification(responseFakeApi.message, "notification-error", true);
-  }
+function passwordKeyUp(event) {
+  user.password = event.target.value;
 }
 
-function generateNotification(message, nameElement, delay = true) {
-  document.getElementById(nameElement).innerText = message;
-  if (delay) {
-    setTimeout(clearNotification, 2 * 1000, nameElement);
-  }
+const submitLogin = document.getElementById("submit");
+submitLogin.addEventListener("click", submited);
+
+function clear() {
+  setTimeout(() => {
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+    password.style.color = "black";
+    email.style.color = "black";
+  }, 5000);
 }
 
-function clearNotification(nameElement) {
-  document.getElementById(nameElement).innerHTML = null;
-}
+function checkEmail() {
+  var email = document.getElementById("email");
+  var filter =
+    /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-function validatePassword() {
-  var regexPassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*\W){8,}/;
-
-  if (regexPassword.test(password)) {
-    console.log(password.length >= 8 && regexPassword.test(password));
+  if (filter.test(email.value)) {
+    console.log("email valido");
     return true;
-  } else {
-    console.log(password.length >= 8 && regexPassword.test(password));
-    return false;
-  }
+  } else email.focus();
+  email.style.color = "red";
+
+  alert("email invalido");
+  clear();
+  return false;
 }
 
-function validateEmail() {
-  var regerxEmail = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+function checkPass() {
+  var password = document.getElementById("password");
+  var filter = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-  if (regerxEmail.test(email)) {
+  if (filter.test(password.value)) {
+    console.log("formato valido");
     return true;
-  } else {
-    return false;
-  }
+  } else password.focus();
+  password.style.color = "red";
+
+  alert("formato de senha invalido, a-z, A-Z, 0-9, !@#$*, +8char");
+  clear();
+  return false;
 }
 
-window.addEventListener("keyup", handleChange);
-loginButton.addEventListener("click", handleLogin);
+function submited() {
+  checkEmail(email);
+  checkPass(password);
+  console.log(fakeFetchApi(user));
+}
