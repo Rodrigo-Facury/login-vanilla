@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,32 @@
     <title>Login</title>
     <link rel="stylesheet" href="/login.css">
 </head>
+
 <body>
-    <div class ="container">
-        <div class = "container-login">
+    <div class="container">
+        <div class="container-login">
             <div class="wrapper-login">
                 <form class="login-form">
                     <span class="login-form-title">
                         FAÇA O LOGIN
                     </span>
+                    <div id="notification-error" class="notification-error"></div>
 
+                    <div class="notification-invalid" id="notification-invalid-email"></div>
                     <div class="wrap-input margin-top-35 margin-bottom-35">
-                        <input class="input-form" type="email" name="email" autocomplete="off">
+                        <input class="input-form" type="email" name="email" autocomplete="off" id="email">
                         <span class="focus-input-form" data-placeholder="E-mail"></span>
                     </div>
 
+                    <div class="notification-invalid" id="notification-invalid-password"></div>
+
                     <div class="wrap-input margin-bottom-35">
-                        <input class="input-form" type="password" name="password">
+                        <input class="input-form" type="password" name="password" id="password">
                         <span class="focus-input-form" data-placeholder="Senha"></span>
                     </div>
 
                     <div class="container-login-form-btn">
-                        <button class="login-form-btn">Login</button>
+                        <button class="login-form-btn" type="submit" id="login">Login</button>
                     </div>
 
                     <ul class="login-utils">
@@ -44,13 +50,26 @@
                     </ul>
                 </form>
                 <script type="module" src="/login.js">
-
-                    
                 </script>
+
             </div>
             <img src="/img/loogin.png" alt="Login" width="300" height="300" class="margin-left-50">
         </div>
     </div>
+    <script>
 
+        let inputs = document.getElementsByClassName('input-form');
+        for (let input of inputs) {
+            input.addEventListener("blur", function () {
+                if (input.value.trim() != "") {
+                    input.classList.add("has-val");
+                } else {
+                    input.classList.remove("has-val");
+                }
+            });
+        }
+
+</script>
 </body>
+
 </html>
