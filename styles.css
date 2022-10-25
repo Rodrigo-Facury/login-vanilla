@@ -88,6 +88,20 @@ hr {
     max-height: 5.5rem;
 }
 
+#errorMessage {
+  background-color: red;
+  padding: 2em;
+  display: none;
+}
+
+input:invalid {
+  background-color: red;
+}
+
+input:valid {
+  background-color: green;
+}
+
 .centered-div {
     position: absolute;
     top: 50%;

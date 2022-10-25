@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login Form</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <hr>
-        <h1>WELCOME TO MY WEBSITE!!!!</h1>
-        <h1>Design SI My passion!</h1>
-        <div class="centered-div">
-            <form class="login-form">
-                <h1>FREE LOGIN NO VIRUS</h1>
-                <div class="flex-column">
-                    <label for="email"><h3>Email:</h3></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="flex-column">
-                    <label for="password"><h3>Password:</h3></label>
-                    <input type="password" id="password" name="password" pattern="(?=.*[^a-Z0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                </div>
-
-                <input type="submit">
-            </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <hr />
+    <h1>WELCOME TO MY WEBSITE!!!!</h1>
+    <h1>Design SI My passion!</h1>
+    <div class="centered-div">
+      <form id="loginForm" class="login-form">
+        <h1>FREE LOGIN NO VIRUS</h1>
+        <div id="errorMessage">hello</div>
+        <div class="flex-column">
+          <label for="email"><h3>Email:</h3></label>
+          <input type="email" id="emailForm" name="email" required />
         </div>
-        <script src="index.js"></script>
-    </body>
+
+        <div class="flex-column">
+          <label for="password">
+            <h3>Password:</h3>
+          </label>
+          <input
+            type="password"
+            id="passwordForm"
+            name="password"
+            pattern="(?=.*[^A-z])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Senha deve ter 8 caracteres ou mais, Letras maisculas e minusculas, e um Caractere especial."
+            required
+          />
+        </div>
+
+        <input type="submit" id="submitButton" />
+      </form>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
