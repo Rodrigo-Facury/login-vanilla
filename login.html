@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <div class="title">
+                 Login
+            </div>
+            <form id="form" method="post" action="">
+                <div class="input_wrap">
+
+                    <label for="input_email">Email</label>
+                    <div class="input_field">
+                        <input type="email" class="input" id="input_email">
+                    </div>
+                </div>
+                <div class="input_wrap">
+                    <label for="input_password">Senha</label>
+                    <div class="input_field">
+                        <input type="password" class="input" id="input_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Senha deve conter ao menos 8 caractéres, com ao menos um número, uma letra maiúscula e uma minúscula!">
+                        
+                    </div>
+                </div>
+                <div class="input_wrap">
+                    
+                    <input type="submit" id="login_btn" class="btn disabled" value="Login" disabled="true">
+                    <div id='alrt'></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script type="module" src="login.js"></script>  
+</body>
+</html>
