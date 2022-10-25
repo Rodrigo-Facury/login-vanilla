@@ -4,9 +4,35 @@ function myFunction(message) {
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
 
+function validateValueEmail(email) {
+    let regexEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return regexEmail.test(email);
+};
 
+function validateValuePassword(password) {
+    let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+    return regexPassword.test(password);
+};
+
+function returnAlert(message, type) {
+    $('#alert_message').show();
+
+document.getElementById('alert_message').innerHTML = `
+    <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+    <div class="alert ${type}">
+    <span class="alertClose">X</span>
+    <span class="alertText">${message}
+    <br class="clear"/></span>
+    </div> 
+`;
+
+setTimeout(() => {
+    $('#alert_message').hide();
+}, 2000);
+}
 
 function Login(user) {
+    console.log(user);
     const users = [
         {
             email: 'Ducilio@uniamerica.com',
@@ -51,9 +77,21 @@ function enviardados(){
     }
 }
 
+const submit = document.getElementById("submit");
 
-var email = document.getElementById("email");
-var password = document.getElementById("password");
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if (validateValueEmail(email), validateValuePassword(password)){
+        Login({email, password});
+    }else{
+        returnAlert('Email ou senha inválidos', 'error');
+    }
+});
+
+
+
 
 email.addEventLister('focus', () => {
     email.style.borderColor = "blue";
