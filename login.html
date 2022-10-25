@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
     <script type="text/javascript" src="login.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Login Form</title>
   </head>
   <body>
@@ -18,14 +19,28 @@
         </div>
         <form class="login-form" id="form">
           <input id="email" type="email" placeholder="Your E-mail" />
+          <small id="small_email"></small>
           <input id="password" type="password" placeholder="Your Password" />
+          <small id="small_pass"></small>
           <button id="submit">Logar</button>
+          <div>
+            <input type="checkbox" id="visiblePassword">
+            <label for="visiblePassword">Visualizar Senha</label>
+          </div>
         </form>
         <span role="alert" id="nameError" aria-hidden="true">
           Please enter First Name
         </span>
       </div>
     </div>
+
+    <script>
+      $('#email').on('input', validateEmailInput);
+      $('#password').on('input', validatePasswordInput);
+      $('#visiblePassword').on('change', viewPassword);
+      $('#submit').on('click', handleLogin);
+
+    </script>
     
   </body>
 </html>
