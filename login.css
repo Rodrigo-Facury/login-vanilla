@@ -1,0 +1,105 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #670856 0%, #007188 100%);
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+form {
+    width: 400px;
+    padding: 50px 40px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(5px);
+    border: 1px solid #ffffff4d;
+}
+form h1 {
+    margin: 0 0 40px;
+    color: #333;
+    font-size: 24px;
+}
+form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-size: 16px;
+}
+form input {
+    border: 1px solid #c9c9c9;
+    outline: none;
+    padding: 12px 8px;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all .1s ease;
+}
+form input:focus {
+    border-color: #0695e7;
+    box-shadow: 0 0 0px 2px #0695e75c;
+}
+form input.invalid {
+    border-color: #f00;
+    background-color: #ff000008;
+}
+form input.invalid:focus {
+    border-color: #f00;
+    box-shadow: 0 0 0px 2px #ff00072b;
+}
+
+
+form button {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px 20px;
+    border: 1px solid #0796e7;
+    background-image: linear-gradient(160deg, #670856 0%, #007188 100%);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFF;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+form button:hover {
+    background-color: #37a7e7;
+    border-color: #37a7e7;
+}
+form button[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+
+form .error {
+    color: #f10000;
+    background-color: #ffe3e3;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #fcacac;
+    margin: 5px 0 0;
+    line-height: 1.4;
+    display: none;
+}
+form .form-response {
+    margin: 20px 0 0;
+    text-align: center;
+}
