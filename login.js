@@ -34,7 +34,8 @@ function handleChange() {
   console.log(email, password)
 }
 
-function handleLogin() {
+function handleLogin(event) {
+  event.preventDefault();
   const responseFakeApi = fakeFetchApi({
     email: email,
     password: password,
@@ -72,11 +73,13 @@ function validatePassword() {
 function validateEmail() {
   let regexEmail = /^[^\s@]+@[^\s@]+.[^\s@]+$/
 
-  if (regexEmail.test(email)) {
-    return true
-  } else {
-    return false
-  }
+  // if (regexEmail.test(email)) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+
+  return regexEmail.test(email);
 }
 
 window.addEventListener("keyup", handleChange)
