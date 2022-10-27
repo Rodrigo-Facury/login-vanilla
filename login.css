@@ -1,0 +1,45 @@
+html {
+    background-image: linear-gradient(blue, purple);
+    height: 100%;
+  }
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    font-size: x-large;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color:   gray;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 20%;
+}
+.message{
+    display: flex;
+    
+    font-size: xx-large;
+    color: white;
+}
+
+.wrongForm{
+    color: red;
+    border: 1px solid red;
+    outline: none;
+}
